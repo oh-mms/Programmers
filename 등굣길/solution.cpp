@@ -7,18 +7,18 @@ int solution(int m, int n, vector<vector<int>> puddles) {
 	long long size = m * n + 1;
 	vector<long long> v(size, 0);
 
-	v[1] = 1;               // ½ÃÀÛÁöÁ¡
-	for (auto x : puddles)   // ¿õµ¢ÀÌ
+	v[1] = 1;                // ì‹œì‘ì§€ì 
+	for (auto x : puddles)   // ì›…ë©ì´
 		v[(m*(x[1] - 1)) + x[0]] = -1;
 
 	for (long long i = 2; i < size; ++i)
 	{
-		if (v[i] == -1) // ¿õµ¢ÀÌ¶ó¸é ³Ñ¾î°¨.
+		if (v[i] == -1) // ì›…ë©ì´ë¼ë©´ ë„˜ì–´ê°.
 			continue;
 
-		if ((i - 1) % m != 0 && v[(i - 1)] != -1) // ¿ŞÂÊ
+		if ((i - 1) % m != 0 && v[(i - 1)] != -1) // ì™¼ìª½
 			v[i] += (v[i - 1]) % 1000000007;
-		if (i - m > 0 && v[i - m] != -1)        // À§
+		if (i - m > 0 && v[i - m] != -1)          // ìœ„
 			v[i] += (v[i - m]) % 1000000007;
 
 		v[i] %= 1000000007;
