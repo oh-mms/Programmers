@@ -4,8 +4,8 @@
 
 using namespace std;
 
-void SetRefMoneyRecursive(	unordered_map<string, int>& totalMoney,
-				unordered_map<string, string>& refTable, string seller, int money)
+void SetRefMoneyRecursive( unordered_map<string, int>& totalMoney,
+			   unordered_map<string, string>& refTable, string seller, int money)
 {
 	int moneyOneTenth = money * 0.1;
 
