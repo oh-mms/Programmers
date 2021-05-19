@@ -5,7 +5,7 @@
 using namespace std;
 
 void SetRefMoneyRecursive(	unordered_map<string, int>& totalMoney,
-												unordered_map<string, string>& refTable, string seller, int money)
+				unordered_map<string, string>& refTable, string seller, int money)
 {
 	int moneyOneTenth = money * 0.1;
 
@@ -22,12 +22,12 @@ vector<int> solution(vector<string> enroll, vector<string> referral, vector<stri
 {
 	vector<int> answer;
 
-	// »ç¿øº° ÃÑ º¸À¯±İ Á¤ÀÇ
+	// ì‚¬ì›ë³„ ì´ ë³´ìœ ê¸ˆ ì •ì˜
 	unordered_map<string, int> totalMoney;
 	for (auto& iter : enroll)
 		totalMoney[iter] = 0;
 
-	// ÀÚ½ÅÀÇ »ó±ŞÀÚ¸¦ µî·Ï
+	// ìì‹ ì˜ ìƒê¸‰ìë¥¼ ë“±ë¡
 	unordered_map<string, string> refTable;
 	for (int i = 0; i < referral.size(); ++i)
 	{
@@ -35,7 +35,7 @@ vector<int> solution(vector<string> enroll, vector<string> referral, vector<stri
 		if (referral[i] != "-")
 			refTable[indexString] = referral[i];
 		else
-			refTable[indexString] = "center"; // ÀÓ½Ã Å×ÀÌºíÀ» ¸¸µé¾îÁÜ.
+			refTable[indexString] = "center"; // ì„ì‹œ í…Œì´ë¸”ì„ ë§Œë“¤ì–´ì¤Œ.
 	}
 
 	for (int i = 0; i < seller.size(); ++i)
